@@ -1,0 +1,11 @@
+<p>listado works!</p>
+<h3>Listado de caracteres</h3>
+<ul>
+    <li *ngFor="let lista of listaCaracteres">
+        {{lista.text}}
+    </li>
+</ul>
+
+<form (submit)="addListado()">
+    <input type="text" [(ngModel)]="listaCaracter" [ngModelOptions]="{standalone: true}" />
+</form>

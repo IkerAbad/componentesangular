@@ -1,0 +1,24 @@
+<h3>Listado de clientes</h3>
+<ul>
+  <li *ngFor="let c of clientes">
+    Nombre: {{ c.nombre }} ----------- Dirección: {{ c.direccion }} <button (click)="borrarCliente(c)"> Borrar</button>
+  </li>
+</ul>
+
+<form (submit)="addCliente()">
+  <label for="direc">Nombre</label>
+  <input
+    id="direc"
+    type="text"
+    [(ngModel)]="cliente.nombre"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <label for="name">Dirección</label>
+  <input
+    id="name"
+    type="text"
+    [(ngModel)]="cliente.direccion"
+    [ngModelOptions]="{ standalone: true }"
+  />
+  <input type="submit" value="Enviar" />
+</form>
